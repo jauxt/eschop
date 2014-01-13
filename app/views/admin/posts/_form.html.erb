@@ -1,0 +1,19 @@
+<%= form_for [:admin, @post] do |f| %>
+  <div class="form-group">
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  </div>
+
+  <div class="form-group" data-no-turbolink>
+  <%= f.label :body %>
+  <%= f.text_area :body, class: "ckeditor" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.check_box :published %>
+  <%= f.label :published %>
+  </div>
+  
+  <%= f.submit "Uložiť článok" %>
+
+<% end %>
