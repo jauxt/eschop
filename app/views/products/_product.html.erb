@@ -1,0 +1,13 @@
+
+
+  <div class="col-sm-4 col-md-3">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3><%= product.name %></h3>
+        <p> <%= image_tag product.image_url,height: '200', width: '150' %></p>
+        <p><%= truncate product.description.html_safe, length: 100 %></p>
+        <p><%= product.price %>,- EUR</p>
+        <p><%= link_to "Ukáž", product_path(product), class: "btn btn-primary" %></p>
+      </div>
+    </div>
+  </div>

@@ -1,26 +1,4 @@
 <h1>Produkty</h1>
-
-<table class="table">
-  <thead>
-  	<tr>
-  	  <th>Meno</th>
-  	  <th>Popis</th>
-  	  <th>Cena</th>
-  	  <th>Obrázok</th>
-
-  	</tr>
-  </thead>
-
-  <tbody>
-<% @products.each do |product| %>
-   
- <tr>
-   <td><%= product.name %></td>
-   <td><%= product.description.html_safe %></td>
-    <td><%= product.price %></td>
-     <td><%= product.image_url %></td>
-       
- </tr>
-<% end %>
-  </tbody>
-</table>
+<div class="row product">
+  <%= render @products %>
+</div>

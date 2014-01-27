@@ -2,3 +2,21 @@
 <h1>Číslo článku: <%= @post.id %></h1>
 <h3>Názov článku: <%= @post.title %></h3>
 <p><%= @post.body.html_safe %></p>
+<h2>Komentáre</h2>
+<p> <%= pluralize_sk(@comments.count, "komentár", "komentárov", "komentáre") %></p>
+<p></p>
+<ul>
+  <%= render @comments %>
+</ul>
+
+
+
+<h2>Pridať komentár</h2>
+
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.submit %>
+<% end %>
+

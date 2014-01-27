@@ -2,22 +2,23 @@
 <html>
 <head>
   <title>Eshop</title>
+  <META http-equiv="Content-Type" content="text/html; charset=utf-8">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<div class="header">
+<div class="header_admin">
   <div class="container">
     <ul class="nav nav-pills">
       <li><%= nav_item "Home", "#" %></li>
-      <li><%= nav_item "Blog", posts_path %></li>
-      <li><%= nav_item "Kontakt", contact_path %></li>
-      <li><%= nav_item "Produkty", products_path %></li>
+      <li><%= nav_item "Blog", admin_posts_path %></li>
+      <li><%= nav_item "Kontakt", "#" %></li>
+      <li><%= nav_item "Produkty", admin_products_path %></li>
       <ul class="nav nav-pills navbar-right">
-        <li><%= link_to "Admin", admin_products_path %></li>
-    </ul>
+        <li><%= link_to "Späť na User web", products_path %></li>
+      </ul>
     </ul>
   </div>
 </div>

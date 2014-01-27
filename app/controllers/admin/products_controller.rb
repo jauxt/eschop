@@ -1,4 +1,7 @@
 class Admin::ProductsController < ApplicationController
+   
+   layout "admin"
+
   def index
     @products = Product.all
   end
@@ -19,11 +22,21 @@ class Admin::ProductsController < ApplicationController
   end
 
   def edit
-    @products=Product.all
+    @product = Product.find params[:id]
+  end
+
+  def update
+    @product = Product.find params[:id]
+    if @product.update params[:product].permit(:name, :description, :price, :image_url)
+       redirect_to admin_products_url
+    else
+      render :edit
+    end
 
   end
 
   def show
+    @product = Product.find params[:id]
   end
 
   def destroy

@@ -1,17 +1,23 @@
 Eshop::Application.routes.draw do
 
+  get "comments/index"
+  get "comments/show"
+  get "comments/new"
+  get "comments/create"
   get "products/edit"
   get "products/new"
   get "products/destroy"
   get "products/index"
   get "products/show"
-  resources :posts, only: [:index, :show]
-   resources :products, only: [:index, :show]
+  resources :posts, only: [:index, :show] do
+    resources :comments
+  end
 
+  resources :products
 
   namespace :admin do
     resources :posts, only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :products
+    resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 
   get "/kontakt" => "pages#contact", as: :contact
