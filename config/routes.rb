@@ -1,5 +1,6 @@
 Eshop::Application.routes.draw do
 
+  get "categories/show"
   get "comments/index"
   get "comments/show"
   get "comments/new"
@@ -12,7 +13,7 @@ Eshop::Application.routes.draw do
   resources :posts, only: [:index, :show] do
     resources :comments
   end
-
+  resources :categories, only: [:show]
   resources :products
 
   namespace :admin do
