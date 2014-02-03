@@ -16,9 +16,9 @@
       <li><%= nav_item "Blog", admin_posts_path %></li>
       <li><%= nav_item "Kontakt", "#" %></li>
       <li><%= nav_item "Produkty", admin_products_path %></li>
-      <ul class="nav nav-pills navbar-right">
         <li><%= link_to "Späť na User web", products_path %></li>
-      </ul>
+        <li class="pull-right"><%= link_to "Odhlásiť sa", admin_session_path(1), method: :delete %></li>
+      
     </ul>
   </div>
 </div>

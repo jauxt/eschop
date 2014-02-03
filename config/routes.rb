@@ -10,6 +10,8 @@ Eshop::Application.routes.draw do
   get "products/destroy"
   get "products/index"
   get "products/show"
+
+  resources :admin_sessions
   resources :posts, only: [:index, :show] do
     resources :comments
   end
